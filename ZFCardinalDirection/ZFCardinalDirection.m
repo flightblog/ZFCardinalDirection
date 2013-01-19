@@ -37,7 +37,6 @@
     return self;
 }
 
-
 #pragma mark Find Headings
 - (BOOL) validateDegrees
 {
@@ -67,15 +66,15 @@
         NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
         
         return compassRoseResults;
-    } else {
-        NSLog(@"no plist");
-        return 0;
     }
-    
+    NSLog(@"no plist");
     return 0;
 }
 
 #pragma mark Return Methods for Compass Points
+
+/** Each return method validates degrees to insure is falls between 0 and 360. */
+
 - (NSString *) headingPoint
 {
     if ([self validateDegrees]) {

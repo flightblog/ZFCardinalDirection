@@ -20,7 +20,6 @@
 //  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 //  OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 #import <Foundation/Foundation.h>
 
 @interface ZFCardinalDirection : NSObject
@@ -28,16 +27,12 @@
 /** Compass heading in degrees */
 @property (nonatomic, readwrite) NSNumber *compassHeadingInDegress;
 
-
 /** Initializer for setting degrees
  * @param compass heading in degrees. Must be a value equal to or greater then 0 and equal to or less then 360.
  */
 - (id) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegress;
 
-
-/** The 32 points of a compass are broken down into 8 principal winds (4 cardinal & ordinal),
- 8 half-winds, 16 quarter winds. 
- */
+/** The 32 compass point names. */
 
  /** @return compass point (1 to 32)
  */
