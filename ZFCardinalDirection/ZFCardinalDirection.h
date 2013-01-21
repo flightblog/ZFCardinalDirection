@@ -36,7 +36,7 @@
 
  /** @return compass point (1 to 32)
  */
-- (NSString *) headingPoint;
+- (NSNumber *) headingPoint;
 
 /* @return cardinal headings & sub-headings (example South by Southwest, North, Westnorth West)
  */

@@ -75,7 +75,7 @@
 
 /** Each return method validates degrees to insure is falls between 0 and 360. */
 
-- (NSString *) headingPoint
+- (NSNumber *) headingPoint
 {
     if ([self validateDegrees]) {
         return [[[self findHeading] objectAtIndex:0] valueForKey:@"block"];
