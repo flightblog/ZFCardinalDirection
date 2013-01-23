@@ -35,8 +35,8 @@
     
     /*
     ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] init];
-    [heading setCompassHeadingInDegress:[NSNumber numberWithDouble:209]];
-    NSLog(@"Block:'%@' Heading:'%@' Abb:'%@' Triditional Wind:'%@'", [heading headingPoint], [heading headingInEnglish], [heading headingAbbreviation],[heading headingTraditionalWindPoint]);
+    [heading setCompassHeadingInDegrees:[NSNumber numberWithDouble:209]];
+    NSLog(@"Block:'%@' Heading:'%@' Abb:'%@' Traditional Wind:'%@'", [heading headingPoint], [heading headingInEnglish], [heading headingAbbreviation],[heading headingTraditionalWindPoint]);
     */
     
     /*
@@ -48,7 +48,7 @@
     {
         NSNumber *testDegree = [NSNumber numberWithDouble:degrees];
         heading = [[ZFCardinalDirection alloc] initWithCompassHeadingInDegrees:testDegree];
-        NSLog(@"%@\u00B0 -> Block:'%@' Heading:'%@' Abb:'%@' Triditional Wind:'%@'", testDegree, [heading headingPoint], [heading headingInEnglish],[heading headingAbbreviation],[heading headingTraditionalWindPoint]);
+        NSLog(@"%@\u00B0 -> Block:'%@' Heading:'%@' Abb:'%@' Traditional Wind:'%@'", testDegree, [heading headingPoint], [heading headingInEnglish],[heading headingAbbreviation],[heading headingTraditionalWindPoint]);
         degrees = degrees + 0.1;
     }
     */

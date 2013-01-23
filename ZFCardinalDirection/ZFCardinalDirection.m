@@ -29,10 +29,10 @@
     return [self initWithCompassHeadingInDegrees:[NSNumber numberWithDouble:0.00]];
 }
 
-- (id) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegress
+- (id) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegrees
 {
     if (self = [super init]) {
-        _compassHeadingInDegress = compassHeadingInDegress;
+        _compassHeadingInDegrees = compassHeadingInDegrees;
     }
     return self;
 }
@@ -45,8 +45,8 @@
     NSNumber *zero = [NSNumber numberWithDouble: 0.00];
     NSNumber *threeSixty = [NSNumber numberWithDouble: 360.00];
     
-    NSComparisonResult testForZero = [zero compare:_compassHeadingInDegress];
-    NSComparisonResult testForThreeSixty = [threeSixty compare:_compassHeadingInDegress];
+    NSComparisonResult testForZero = [zero compare:_compassHeadingInDegrees];
+    NSComparisonResult testForThreeSixty = [threeSixty compare:_compassHeadingInDegrees];
     
     if ((testForZero == NSOrderedSame || testForZero == NSOrderedAscending) && (testForThreeSixty == NSOrderedSame || testForThreeSixty == NSOrderedDescending)){
         return 1;
@@ -62,7 +62,7 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         
         NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
-        NSPredicate *p = [NSPredicate predicateWithFormat:@"(degreeLow <= %@) and (degreeHigh => %@) ", _compassHeadingInDegress, _compassHeadingInDegress];
+        NSPredicate *p = [NSPredicate predicateWithFormat:@"(degreeLow <= %@) and (degreeHigh => %@) ", _compassHeadingInDegrees, _compassHeadingInDegrees];
         NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
         
         return compassRoseResults;

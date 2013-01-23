@@ -25,12 +25,12 @@
 @interface ZFCardinalDirection : NSObject
 
 /** Compass heading in degrees */
-@property (nonatomic, readwrite) NSNumber *compassHeadingInDegress;
+@property (nonatomic, readwrite) NSNumber *compassHeadingInDegrees;
 
 /** Initializer for setting degrees
  * @param compass heading in degrees. Must be a value equal to or greater then 0 and equal to or less then 360.
  */
-- (id) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegress;
+- (id) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegrees;
 
 /** The 32 compass point names. */
 
@@ -38,7 +38,7 @@
  */
 - (NSNumber *) headingPoint;
 
-/* @return cardinal headings & sub-headings (example South by Southwest, North, Westnorth West)
+/* @return cardinal headings & sub-headings (example South by Southwest, North, Northwest West)
  */
 - (NSString *) headingInEnglish;
 
