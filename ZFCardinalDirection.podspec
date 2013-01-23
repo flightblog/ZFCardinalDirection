@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ZFCardinalDirection"
-  s.version      = "0.1"
+  s.version      = "0.2"
   s.summary      = "Cardinal & ordinal compass directions from a compass heading in degrees, (aka Boxing the Compass)."
   s.homepage     = "https://github.com/flightblog/ZFCardinalDirection"
   
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { "Steve Foster" => "email@address.com" }
   s.source       = { 
 	:git => "https://github.com/flightblog/ZFCardinalDirection.git", 
-	:tag => "0.1"
+	:tag => "0.2"
 	 }
   
   s.platform     = :ios
