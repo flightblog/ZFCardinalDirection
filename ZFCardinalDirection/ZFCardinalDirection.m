@@ -102,7 +102,7 @@
 - (NSString *) headingTraditionalWindPoint
 {
     if ([self validateDegrees]) {
-        return [[[self findHeading] objectAtIndex:0] valueForKey:@"triditionalWind"];
+        return [[[self findHeading] objectAtIndex:0] valueForKey:@"traditionalWind"];
     }
     return 0;
 }

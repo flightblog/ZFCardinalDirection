@@ -46,7 +46,7 @@
  */
 - (NSString *) headingAbbreviation;
 
-/** @return triditional seafarers names
+/** @return traditional seafarers names
  */
 - (NSString *) headingTraditionalWindPoint;
 

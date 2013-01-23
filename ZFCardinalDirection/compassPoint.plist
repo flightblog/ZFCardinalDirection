@@ -415,7 +415,7 @@
 		<string>Northwest by North</string>
 		<key>abbreviation</key>
 		<string>NWbN</string>
-		<key>triditionalWind</key>
+		<key>traditionalWind</key>
 		<string>Qto Maestro verso Tramontana</string>
 		<key>degreeLow</key>
 		<real>320.63</real>
@@ -443,7 +443,7 @@
 		<string>North by West</string>
 		<key>abbreviation</key>
 		<string>NbW</string>
-		<key>triditionalWind</key>
+		<key>traditionalWind</key>
 		<string>Qto Tramontana verso Maestro</string>
 		<key>degreeLow</key>
 		<real>343.13</real>
