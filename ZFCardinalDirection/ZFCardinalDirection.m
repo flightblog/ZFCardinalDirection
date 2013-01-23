@@ -68,7 +68,7 @@
         return compassRoseResults;
     }
     NSLog(@"no plist");
-    return 0;
+    return nil;
 }
 
 #pragma mark Return Methods for Compass Points
@@ -80,7 +80,7 @@
     if ([self validateDegrees]) {
         return [[[self findHeading] objectAtIndex:0] valueForKey:@"block"];
     }
-    return 0;
+    return nil;
 }
 
 - (NSString *) headingInEnglish
@@ -88,7 +88,7 @@
     if ([self validateDegrees]) {
         return [[[self findHeading] objectAtIndex:0] valueForKey:@"point"];
     }
-    return 0;
+    return nil;
 }
 
 - (NSString *) headingAbbreviation
@@ -96,7 +96,7 @@
     if ([self validateDegrees]) {
         return [[[self findHeading] objectAtIndex:0] valueForKey:@"abbreviation"];
     }
-    return 0;
+    return nil;
 }
 
 - (NSString *) headingTraditionalWindPoint
@@ -104,7 +104,7 @@
     if ([self validateDegrees]) {
         return [[[self findHeading] objectAtIndex:0] valueForKey:@"traditionalWind"];
     }
-    return 0;
+    return nil;
 }
 
 @end
