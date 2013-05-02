@@ -54,7 +54,7 @@
     return 0;
 }
 
-- (NSArray *) findHeading
+- (NSArray *)findHeading
 {
     // Search plist to find heading for a given compass degree.
     
