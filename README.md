@@ -14,11 +14,11 @@ http://en.wikipedia.org/wiki/Boxing_the_compass
 
 ### Usage ###
 
-Initialisation with degrees:
+Initialization with degrees:
 
     ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] initWithCompassHeadingInDegrees:[NSNumber numberWithFloat:360]];
     
-Initialisation with abbreviation:
+Initialization with abbreviation:
 
     ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] initWithCompassHeadingAbbreviation:@"NW"];
 
