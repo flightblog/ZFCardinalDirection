@@ -4,6 +4,7 @@ Boxing the Compass - Cardinal and ordinal compass directions derived from compas
 Objective-C.
 
 ### From Wikipedia.org ###
+
 Boxing the compass is the action of naming all thirty-two clockwise points of the compass in order. Such names are 
 formed by the initials of the cardinal directions and their intermediate ordinal directions, and are very handy to 
 refer to a heading (or course or azimuth) in a general or colloquial fashion, without having to resort to computing 
@@ -13,13 +14,16 @@ http://en.wikipedia.org/wiki/Boxing_the_compass
 
 ### Usage ###
 
-    ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] init];
-    [heading setCompassHeadingInDegress:[NSNumber numberWithDouble:209]];
-    NSLog(@"Block:'%@' Heading:'%@' Abb:'%@' Triditional Wind:'%@'", [heading headingPoint], [heading headingInEnglish], [heading headingAbbreviation],[heading headingTraditionalWindPoint]);
-    */    
+Initialisation with degrees:
 
     ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] initWithCompassHeadingInDegrees:[NSNumber numberWithFloat:360]];
     
+Initialisation with abbreviation:
+
+    ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] initWithCompassHeadingAbbreviation:@"NW"];
+
+Available information:
+
     [heading headingPoint];
     [heading headingInEnglish];
     [heading headingAbbreviation];
@@ -33,7 +37,6 @@ http://en.wikipedia.org/wiki/Boxing_the_compass
     
     while ( degrees < 360.01 )
     {
-
         NSNumber *testDegree = [NSNumber numberWithDouble:degrees];
         
         heading = [[ZFBoxingCompass alloc] initWithCompassHeadingInDegrees:testDegree];
@@ -42,10 +45,6 @@ http://en.wikipedia.org/wiki/Boxing_the_compass
         degrees = degrees + 0.1;
     }
 
-
-### TODO:
-
-* Create a cocoapod.
 
 ## Contact
 
