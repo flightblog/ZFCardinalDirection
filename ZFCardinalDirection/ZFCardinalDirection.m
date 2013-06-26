@@ -37,7 +37,17 @@
     return self;
 }
 
+- (id) initWithCompassHeadingAbbreviation:(NSString *)headingAbbreviation
+{
+    if (self = [super init]) {
+        _compassHeadingInDegrees = [self degreesFromHeadingAbbreviation:headingAbbreviation];
+    }
+    return self;
+}
+
+
 #pragma mark Find Headings
+
 - (BOOL) validateDegrees
 {
     // Validates degree. Degrees must be within 0 and 360.
@@ -70,6 +80,28 @@
     NSLog(@"no plist");
     return nil;
 }
+
+- (NSNumber *) degreesFromHeadingAbbreviation:(NSString *)headingAbbreviation
+{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"compassPoint" ofType:@"plist"];;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        
+        NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
+        NSPredicate *p = [NSPredicate predicateWithFormat:@"(abbreviation == %@)", headingAbbreviation];
+        NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
+        
+        if ([compassRoseResults count]) {
+            NSNumber *degreeLow = [[compassRoseResults objectAtIndex:0] valueForKey:@"degreeLow"];
+            NSNumber *degreeHigh = [[compassRoseResults objectAtIndex:0] valueForKey:@"degreeHigh"];
+            return [NSNumber numberWithDouble:(([degreeLow doubleValue]+[degreeHigh doubleValue])/2.0)];
+        }
+        return nil;
+    }
+    
+    NSLog(@"no plist");
+    return nil;
+}
+
 
 #pragma mark Return Methods for Compass Points
 

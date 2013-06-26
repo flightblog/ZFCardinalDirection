@@ -32,6 +32,11 @@
  */
 - (id) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegrees;
 
+/** Initializer for setting abbreviation
+ * @param compass heading abbreviation.  E.g. NE, N, SSW etc.
+ */
+- (id) initWithCompassHeadingAbbreviation:(NSString *)headingAbbreviation;
+
 /** The 32 compass point names. */
 
  /** @return compass point (1 to 32)
