@@ -54,22 +54,22 @@
     return 0;
 }
 
-- (NSArray *)findHeading
-{
-    // Search plist to find heading for a given compass degree.
-    
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"compassPoint" ofType:@"plist"];;
-    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        
-        NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
-        NSPredicate *p = [NSPredicate predicateWithFormat:@"(degreeLow <= %@) and (degreeHigh => %@) ", _compassHeadingInDegrees, _compassHeadingInDegrees];
-        NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
-        
-        return compassRoseResults;
-    }
-    NSLog(@"no plist");
-    return nil;
-}
+//- (NSArray *)findHeading
+//{
+//    // Search plist to find heading for a given compass degree.
+//    
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"compassPoint" ofType:@"plist"];
+//    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+//        
+//        NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
+////        NSPredicate *p = [NSPredicate predicateWithFormat:@"(degreeLow <= %@) and (degreeHigh => %@) ", _compassHeadingInDegrees, _compassHeadingInDegrees];
+////        NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
+//        
+//        return compassRoseResults;
+//    }
+//    NSLog(@"no plist");
+//    return nil;
+//}
 
 #pragma mark Return Methods for Compass Points
 
