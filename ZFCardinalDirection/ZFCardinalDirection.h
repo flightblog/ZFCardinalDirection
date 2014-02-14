@@ -47,6 +47,11 @@
  */
 - (NSString *) headingInEnglish;
 
+/* @return 8 point cardinal headings: North, South, East, West
+ */
+- (NSString *) eightPointHeadingInEnglish;
+
+
 /* @return abbreviation of headingInEnglish (example N, SbSW)
  */
 - (NSString *) headingAbbreviation;

@@ -64,22 +64,22 @@
     return 0;
 }
 
-//- (NSArray *)findHeading
-//{
-//    // Search plist to find heading for a given compass degree.
-//    
-//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"compassPoint" ofType:@"plist"];
-//    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-//        
-//        NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
-////        NSPredicate *p = [NSPredicate predicateWithFormat:@"(degreeLow <= %@) and (degreeHigh => %@) ", _compassHeadingInDegrees, _compassHeadingInDegrees];
-////        NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
-//        
-//        return compassRoseResults;
-//    }
-//    NSLog(@"no plist");
-//    return nil;
-//}
+- (NSArray *)findHeading
+{
+    // Search plist to find heading for a given compass degree.
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"compassPoint" ofType:@"plist"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        
+        NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
+        NSPredicate *p = [NSPredicate predicateWithFormat:@"(degreeLow <= %@) and (degreeHigh => %@) ", _compassHeadingInDegrees, _compassHeadingInDegrees];
+        NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
+        
+        return compassRoseResults;
+    }
+    NSLog(@"no plist");
+    return nil;
+}
 
 - (NSNumber *) degreesFromHeadingAbbreviation:(NSString *)headingAbbreviation
 {
@@ -123,13 +123,22 @@
     return nil;
 }
 
-- (NSString *) headingAbbreviation
+- (NSString *)eightPointHeadingInEnglish
 {
     if ([self validateDegrees]) {
-        return [[[self findHeading] objectAtIndex:0] valueForKey:@"abbreviation"];
+        return [[[self findHeading] objectAtIndex:0] valueForKey:@"eightPointHeadingInEnglish"];
     }
     return nil;
 }
+
+- (NSString *)headingAbbreviation
+{
+    if ([self validateDegrees]) {
+        return [[[self findHeading] objectAtIndex:0] valueForKey:@"headingAbbreviation"];
+    }
+    return nil;
+}
+
 
 - (NSString *) headingTraditionalWindPoint
 {
