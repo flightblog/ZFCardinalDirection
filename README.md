@@ -26,10 +26,11 @@ Available information:
 
     [heading headingPoint];
     [heading headingInEnglish];
+    [heading eightPointHeadingInEnglish];
     [heading headingAbbreviation];
     [heading headingTraditionalWindPoint];
 
-    NSLog(@"Block:'%@' Heading:'%@' Abb:'%@' Triditional Wind:'%@'", [heading headingPoint], [heading headingInEnglish],[heading headingAbbreviation],[heading headingTraditionalWindPoint]);
+    NSLog(@"Block:'%@' Heading:'%@' Abb:'%@' Triditional Wind:'%@'", [heading headingPoint], [heading headingInEnglish], [heading eightPointHeadingInEnglish],[heading headingAbbreviation],[heading headingTraditionalWindPoint]);
  
     //Testing of all degrees 0 to 360
     ZFBoxingCompass *heading;
@@ -41,7 +42,7 @@ Available information:
         
         heading = [[ZFBoxingCompass alloc] initWithCompassHeadingInDegrees:testDegree];
     
-        NSLog(@"%@\u00B0 -> Block:'%@' Heading:'%@' Abb:'%@' Triditional Wind:'%@'", testDegree, [heading headingPoint], [heading headingInEnglish],[heading headingAbbreviation],[heading headingTraditionalWindPoint]);
+        NSLog(@"%@\u00B0 -> Block:'%@' Heading:'%@' Abb:'%@' Traditional Wind:'%@'", testDegree, [heading headingPoint], [heading headingInEnglish],[heading headingAbbreviation],[heading headingTraditionalWindPoint]);
         degrees = degrees + 0.1;
     }
 
