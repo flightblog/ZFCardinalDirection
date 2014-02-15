@@ -138,7 +138,7 @@
 - (NSString *) headingInEnglish
 {
     if ([self validateDegrees]) {
-        return [[[self findHeading] objectAtIndex:0] valueForKey:@"abbreviation"];
+        return [[[self findHeading] objectAtIndex:0] valueForKey:@"point"];
     }
     return nil;
 }
@@ -154,7 +154,7 @@
 - (NSString *)headingAbbreviation
 {
     if ([self validateDegrees]) {
-        return [[[self findHeading] objectAtIndex:0] valueForKey:@"headingAbbreviation"];
+        return [[[self findHeading] objectAtIndex:0] valueForKey:@"abbreviation"];
     }
     return nil;
 }

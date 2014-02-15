@@ -29,7 +29,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] initWithCompassHeadingInDegrees:@179.601104];
+    ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] initWithCompassHeadingInDegrees:@306.403496];
     
     NSLog(@"Block:'%@' Heading:'%@' Abb:'%@' Triditional Wind:'%@'", [heading headingPoint], [heading headingInEnglish],[heading headingAbbreviation],[heading headingTraditionalWindPoint]);
     NSLog(@"Simple heading: %@", [heading eightPointHeadingInEnglish]);
