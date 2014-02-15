@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F025374016A7B42A00798034 /* compassPoint.plist in Resources */ = {isa = PBXBuildFile; fileRef = F025373F16A7B42A00798034 /* compassPoint.plist */; };
 		F025374316A7B45600798034 /* ZFCardinalDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = F025374216A7B45600798034 /* ZFCardinalDirection.m */; };
+		F0BA0E5E18AEDFB500D3E808 /* eightPointCompass.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0E5D18AEDFB500D3E808 /* eightPointCompass.plist */; };
 		F0C734C516A7B0CD005FC667 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C734C416A7B0CD005FC667 /* UIKit.framework */; };
 		F0C734C716A7B0CD005FC667 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C734C616A7B0CD005FC667 /* Foundation.framework */; };
 		F0C734C916A7B0CD005FC667 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C734C816A7B0CD005FC667 /* CoreGraphics.framework */; };
@@ -24,6 +25,7 @@
 		F025373F16A7B42A00798034 /* compassPoint.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = compassPoint.plist; sourceTree = "<group>"; };
 		F025374116A7B45600798034 /* ZFCardinalDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCardinalDirection.h; sourceTree = "<group>"; };
 		F025374216A7B45600798034 /* ZFCardinalDirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCardinalDirection.m; sourceTree = "<group>"; };
+		F0BA0E5D18AEDFB500D3E808 /* eightPointCompass.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = eightPointCompass.plist; sourceTree = "<group>"; };
 		F0C734C116A7B0CD005FC667 /* ZFCardinalDirection-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZFCardinalDirection-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C734C416A7B0CD005FC667 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F0C734C616A7B0CD005FC667 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -59,6 +61,7 @@
 				F025374116A7B45600798034 /* ZFCardinalDirection.h */,
 				F025374216A7B45600798034 /* ZFCardinalDirection.m */,
 				F025373F16A7B42A00798034 /* compassPoint.plist */,
+				F0BA0E5D18AEDFB500D3E808 /* eightPointCompass.plist */,
 			);
 			path = ZFCardinalDirection;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				F0C734D716A7B0CD005FC667 /* Default.png in Resources */,
 				F0C734D916A7B0CD005FC667 /* Default@2x.png in Resources */,
 				F0C734DB16A7B0CD005FC667 /* Default-568h@2x.png in Resources */,
+				F0BA0E5E18AEDFB500D3E808 /* eightPointCompass.plist in Resources */,
 				F025374016A7B42A00798034 /* compassPoint.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -81,7 +81,27 @@
     return nil;
 }
 
-- (NSNumber *) degreesFromHeadingAbbreviation:(NSString *)headingAbbreviation
+- (NSArray *)findEightPointHeading
+{
+    // Search plist to find heading for a given compass degree.
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"eightPointCompass" ofType:@"plist"];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        
+        NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
+        
+        NSPredicate *p = [NSPredicate predicateWithFormat:@"(degreeLow <= %@) and (degreeHigh => %@) ", _compassHeadingInDegrees, _compassHeadingInDegrees];
+        NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
+        
+        return compassRoseResults;
+    }
+    NSLog(@"no plist");
+    return nil;
+}
+
+
+- (NSNumber *)degreesFromHeadingAbbreviation:(NSString *)headingAbbreviation
 {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"compassPoint" ofType:@"plist"];;
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
@@ -118,7 +138,7 @@
 - (NSString *) headingInEnglish
 {
     if ([self validateDegrees]) {
-        return [[[self findHeading] objectAtIndex:0] valueForKey:@"point"];
+        return [[[self findHeading] objectAtIndex:0] valueForKey:@"abbreviation"];
     }
     return nil;
 }
@@ -126,7 +146,7 @@
 - (NSString *)eightPointHeadingInEnglish
 {
     if ([self validateDegrees]) {
-        return [[[self findHeading] objectAtIndex:0] valueForKey:@"eightPointHeadingInEnglish"];
+        return [[[self findEightPointHeading] objectAtIndex:0] valueForKey:@"abbreviation"];
     }
     return nil;
 }
