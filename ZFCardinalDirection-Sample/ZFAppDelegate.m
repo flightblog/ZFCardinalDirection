@@ -28,19 +28,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-   
     
-    double degrees = 0.01;
+    ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] initWithCompassHeadingInDegrees:@179.601104];
     
-    while (degrees < 360.01) {
-        
-        ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] initWithCompassHeadingInDegrees:[NSNumber numberWithFloat:degrees]];
-        
-        //NSLog(@"Block:'%@' Heading:'%@' Abb:'%@' Triditional Wind:'%@'", [heading headingPoint], [heading headingInEnglish],[heading headingAbbreviation],[heading headingTraditionalWindPoint]);
-        
-        NSLog(@"Simple heading: %@ for %f", [heading eightPointHeadingInEnglish], degrees);
-        degrees = degrees + 0.01;
-    }
+    NSLog(@"Block:'%@' Heading:'%@' Abb:'%@' Triditional Wind:'%@'", [heading headingPoint], [heading headingInEnglish],[heading headingAbbreviation],[heading headingTraditionalWindPoint]);
+    NSLog(@"Simple heading: %@", [heading eightPointHeadingInEnglish]);
+    
+    
+//    double degrees = 0.01;
+//    
+//    while (degrees < 360.01) {
+//        ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] initWithCompassHeadingInDegrees:[NSNumber numberWithFloat:degrees]];
+//        
+//        NSLog(@"Simple heading: %@ for %f", [heading eightPointHeadingInEnglish], degrees);
+//        degrees = degrees + 0.01;
+//    }
     
     /*
     ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] init];
@@ -48,20 +50,6 @@
     NSLog(@"Block:'%@' Heading:'%@' Abb:'%@' Traditional Wind:'%@'", [heading headingPoint], [heading headingInEnglish], [heading headingAbbreviation],[heading headingTraditionalWindPoint]);
     */
     
-    /*
-    //Testing of all degrees 0 to 360
-    ZFCardinalDirection *heading;
-    double degrees = 0;
-     
-    while ( degrees < 360.01 )
-    {
-        NSNumber *testDegree = [NSNumber numberWithDouble:degrees];
-        heading = [[ZFCardinalDirection alloc] initWithCompassHeadingInDegrees:testDegree];
-        NSLog(@"%@\u00B0 -> Block:'%@' Heading:'%@' Abb:'%@' Traditional Wind:'%@'", testDegree, [heading headingPoint], [heading headingInEnglish],[heading headingAbbreviation],[heading headingTraditionalWindPoint]);
-        degrees = degrees + 0.1;
-    }
-    */
-
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
