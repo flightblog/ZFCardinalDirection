@@ -30,12 +30,12 @@
 /** Initializer for setting degrees
  * @param compass heading in degrees. Must be a value equal to or greater then 0 and equal to or less then 360.
  */
-- (id) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegrees;
+- (instancetype) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegrees;
 
 /** Initializer for setting abbreviation
  * @param compass heading abbreviation.  E.g. NE, N, SSW etc.
  */
-- (id) initWithCompassHeadingAbbreviation:(NSString *)headingAbbreviation;
+- (instancetype) initWithCompassHeadingAbbreviation:(NSString *)headingAbbreviation;
 
 /** The 32 compass point names. */
 

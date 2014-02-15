@@ -24,12 +24,12 @@
 
 @implementation ZFCardinalDirection
 
-- (id) init
+- (instancetype) init
 {
     return [self initWithCompassHeadingInDegrees:[NSNumber numberWithDouble:0.00]];
 }
 
-- (id) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegrees
+- (instancetype) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegrees
 {
     if (self = [super init]) {
         _compassHeadingInDegrees = compassHeadingInDegrees;
@@ -37,7 +37,7 @@
     return self;
 }
 
-- (id) initWithCompassHeadingAbbreviation:(NSString *)headingAbbreviation
+- (instancetype) initWithCompassHeadingAbbreviation:(NSString *)headingAbbreviation
 {
     if (self = [super init]) {
         _compassHeadingInDegrees = [self degreesFromHeadingAbbreviation:headingAbbreviation];
@@ -99,7 +99,6 @@
     NSLog(@"no plist");
     return nil;
 }
-
 
 - (NSNumber *)degreesFromHeadingAbbreviation:(NSString *)headingAbbreviation
 {
