@@ -145,7 +145,7 @@
 - (NSString *)eightPointHeadingInEnglish
 {
     if ([self validateDegrees]) {
-        return [[[self findEightPointHeading] objectAtIndex:0] valueForKey:@"abbreviation"];
+        return [[[self findEightPointHeading] objectAtIndex:0] valueForKey:@"point"];
     }
     return nil;
 }
