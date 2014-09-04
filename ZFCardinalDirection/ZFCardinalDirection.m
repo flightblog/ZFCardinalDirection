@@ -22,23 +22,21 @@
 
 #import "ZFCardinalDirection.h"
 
+
 @implementation ZFCardinalDirection
 
-- (instancetype) init
-{
+- (instancetype) init {
     return [self initWithCompassHeadingInDegrees:[NSNumber numberWithDouble:0.00]];
 }
 
-- (instancetype) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegrees
-{
+- (instancetype) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegrees {
     if (self = [super init]) {
         _compassHeadingInDegrees = compassHeadingInDegrees;
     }
     return self;
 }
 
-- (instancetype) initWithCompassHeadingAbbreviation:(NSString *)headingAbbreviation
-{
+- (instancetype) initWithCompassHeadingAbbreviation:(NSString *)headingAbbreviation {
     if (self = [super init]) {
         _compassHeadingInDegrees = [self degreesFromHeadingAbbreviation:headingAbbreviation];
     }
@@ -48,67 +46,62 @@
 
 #pragma mark Find Headings
 
-- (BOOL) validateDegrees
-{
-    // Validates degree. Degrees must be within 0 and 360.
-    
+- (BOOL) validateDegrees {
+
     NSNumber *zero = [NSNumber numberWithDouble: 0.00];
     NSNumber *threeSixty = [NSNumber numberWithDouble: 360.00];
-    
+
     NSComparisonResult testForZero = [zero compare:_compassHeadingInDegrees];
     NSComparisonResult testForThreeSixty = [threeSixty compare:_compassHeadingInDegrees];
-    
+
     if ((testForZero == NSOrderedSame || testForZero == NSOrderedAscending) && (testForThreeSixty == NSOrderedSame || testForThreeSixty == NSOrderedDescending)){
         return 1;
     }
     return 0;
 }
 
-- (NSArray *)findHeading
-{
-    // Search plist to find heading for a given compass degree.
-    
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"compassPoint" ofType:@"plist"];
+- (NSArray *)findHeading {
+
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"compassPoint222" ofType:@"plist"];
+
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        
+
         NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
         NSPredicate *p = [NSPredicate predicateWithFormat:@"(degreeLow <= %@) and (degreeHigh => %@) ", _compassHeadingInDegrees, _compassHeadingInDegrees];
         NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
-        
+
         return compassRoseResults;
     }
-    NSLog(@"no plist");
     return nil;
 }
 
-- (NSArray *)findEightPointHeading
-{
-    // Search plist to find heading for a given compass degree.
-    
+- (NSArray *)findEightPointHeading {
+
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"eightPointCompass" ofType:@"plist"];
-    
+
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        
+
         NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
-        
+
         NSPredicate *p = [NSPredicate predicateWithFormat:@"(degreeLow <= %@) and (degreeHigh => %@) ", _compassHeadingInDegrees, _compassHeadingInDegrees];
         NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
-        
+
         return compassRoseResults;
     }
-    NSLog(@"no plist");
+
     return nil;
 }
 
-- (NSNumber *)degreesFromHeadingAbbreviation:(NSString *)headingAbbreviation
-{
+
+- (NSNumber *)degreesFromHeadingAbbreviation:(NSString *)headingAbbreviation {
+
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"compassPoint" ofType:@"plist"];;
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        
+
         NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
         NSPredicate *p = [NSPredicate predicateWithFormat:@"(abbreviation == %@)", headingAbbreviation];
         NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
-        
+
         if ([compassRoseResults count]) {
             NSNumber *degreeLow = [[compassRoseResults objectAtIndex:0] valueForKey:@"degreeLow"];
             NSNumber *degreeHigh = [[compassRoseResults objectAtIndex:0] valueForKey:@"degreeHigh"];
@@ -116,8 +109,7 @@
         }
         return nil;
     }
-    
-    NSLog(@"no plist");
+
     return nil;
 }
 
@@ -126,32 +118,32 @@
 
 /** Each return method validates degrees to insure is falls between 0 and 360. */
 
-- (NSNumber *) headingPoint
-{
+- (NSNumber *) headingPoint {
+
     if ([self validateDegrees]) {
         return [[[self findHeading] objectAtIndex:0] valueForKey:@"block"];
     }
     return nil;
 }
 
-- (NSString *) headingInEnglish
-{
+- (NSString *) headingInEnglish {
+
     if ([self validateDegrees]) {
         return [[[self findHeading] objectAtIndex:0] valueForKey:@"point"];
     }
     return nil;
 }
 
-- (NSString *)eightPointHeadingInEnglish
-{
+- (NSString *)eightPointHeadingInEnglish {
+
     if ([self validateDegrees]) {
         return [[[self findEightPointHeading] objectAtIndex:0] valueForKey:@"point"];
     }
     return nil;
 }
 
-- (NSString *)headingAbbreviation
-{
+- (NSString *)headingAbbreviation {
+
     if ([self validateDegrees]) {
         return [[[self findHeading] objectAtIndex:0] valueForKey:@"abbreviation"];
     }
@@ -159,8 +151,8 @@
 }
 
 
-- (NSString *) headingTraditionalWindPoint
-{
+- (NSString *) headingTraditionalWindPoint {
+
     if ([self validateDegrees]) {
         return [[[self findHeading] objectAtIndex:0] valueForKey:@"traditionalWind"];
     }

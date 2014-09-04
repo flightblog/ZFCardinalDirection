@@ -29,27 +29,25 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] initWithCompassHeadingInDegrees:@306.403496];
-    
-    NSLog(@"Block:'%@' Heading:'%@' Abb:'%@' Triditional Wind:'%@'", [heading headingPoint], [heading headingInEnglish],[heading headingAbbreviation],[heading headingTraditionalWindPoint]);
-    NSLog(@"Simple heading: %@", [heading eightPointHeadingInEnglish]);
-    
-    
-//    double degrees = 0.01;
-//    
-//    while (degrees < 360.01) {
-//        ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] initWithCompassHeadingInDegrees:[NSNumber numberWithFloat:degrees]];
-//        
-//        NSLog(@"Simple heading: %@ for %f", [heading eightPointHeadingInEnglish], degrees);
-//        degrees = degrees + 0.01;
-//    }
-    
-    /*
+//    ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] initWithCompassHeadingInDegrees:@306.403496];
+//    NSLog(@"Block:'%@' Heading:'%@' Abb:'%@' Triditional Wind:'%@'", [heading headingPoint], [heading headingInEnglish],[heading headingAbbreviation],[heading headingTraditionalWindPoint]);
+//    NSLog(@"Simple heading: %@", [heading eightPointHeadingInEnglish]);
+
     ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] init];
     [heading setCompassHeadingInDegrees:[NSNumber numberWithDouble:209]];
     NSLog(@"Block:'%@' Heading:'%@' Abb:'%@' Traditional Wind:'%@'", [heading headingPoint], [heading headingInEnglish], [heading headingAbbreviation],[heading headingTraditionalWindPoint]);
-    */
-    
+
+    [heading setCompassHeadingInDegrees:[NSNumber numberWithDouble:209]];
+    NSLog(@"Eight pt:%@", [heading eightPointHeadingInEnglish]);
+
+    //    double degrees = 0.01;
+    //    while (degrees < 360.01) {
+    //        ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] initWithCompassHeadingInDegrees:[NSNumber numberWithFloat:degrees]];
+    //
+    //        NSLog(@"Simple heading: %@ for %f", [heading eightPointHeadingInEnglish], degrees);
+    //        degrees = degrees + 0.01;
+    //    }
+
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

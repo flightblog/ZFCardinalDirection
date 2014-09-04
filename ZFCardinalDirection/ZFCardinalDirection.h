@@ -22,40 +22,54 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface ZFCardinalDirection : NSObject
 
-/** Compass heading in degrees */
+/*!
+ Compass heading in degrees
+ */
 @property (nonatomic, readwrite) NSNumber *compassHeadingInDegrees;
 
-/** Initializer for setting degrees
- * @param compass heading in degrees. Must be a value equal to or greater then 0 and equal to or less then 360.
+
+/*! Initializer for setting degrees
+ @param compass heading in degrees. Must be a value equal to or greater then 0 and equal to or less then 360.
  */
 - (instancetype) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegrees;
 
-/** Initializer for setting abbreviation
- * @param compass heading abbreviation.  E.g. NE, N, SSW etc.
+
+/*! Initializer for setting abbreviation
+ @param compass heading abbreviation.  E.g. NE, N, SSW etc.
  */
 - (instancetype) initWithCompassHeadingAbbreviation:(NSString *)headingAbbreviation;
 
-/** The 32 compass point names. */
 
- /** @return compass point (1 to 32)
+
+/*! The 32 compass point names.
+ @return compass point (1 to 32)
  */
 - (NSNumber *) headingPoint;
 
-/* @return cardinal headings & sub-headings (example South by Southwest, North, Northwest West)
+
+/*!
+ @return cardinal headings & sub-headings (example South by Southwest, North, Northwest West)
  */
 - (NSString *) headingInEnglish;
 
-/* @return 8 point cardinal headings (north, northeast, east, southeast, south, southwest, west, northwest)
+
+/*!
+ @return 8 point cardinal headings (north, northeast, east, southeast, south, southwest, west, northwest)
  */
 - (NSString *) eightPointHeadingInEnglish;
 
-/* @return abbreviation of headingInEnglish (example N, SbSW)
+
+/*!
+ @return abbreviation of headingInEnglish (example N, SbSW)
  */
 - (NSString *) headingAbbreviation;
 
-/** @return traditional seafarers names
+
+/*!
+ @return traditional seafarers names
  */
 - (NSString *) headingTraditionalWindPoint;
 
