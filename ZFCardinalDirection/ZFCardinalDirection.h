@@ -34,43 +34,43 @@
 /*! Initializer for setting degrees
  @param compass heading in degrees. Must be a value equal to or greater then 0 and equal to or less then 360.
  */
-- (instancetype) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegrees;
+- (instancetype) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegrees NS_DESIGNATED_INITIALIZER;
 
 
 /*! Initializer for setting abbreviation
  @param compass heading abbreviation.  E.g. NE, N, SSW etc.
  */
-- (instancetype) initWithCompassHeadingAbbreviation:(NSString *)headingAbbreviation;
+- (instancetype) initWithCompassHeadingAbbreviation:(NSString *)headingAbbreviation NS_DESIGNATED_INITIALIZER;
 
 
 
 /*! The 32 compass point names.
  @return compass point (1 to 32)
  */
-- (NSNumber *) headingPoint;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSNumber *headingPoint;
 
 
 /*!
  @return cardinal headings & sub-headings (example South by Southwest, North, Northwest West)
  */
-- (NSString *) headingInEnglish;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *headingInEnglish;
 
 
 /*!
  @return 8 point cardinal headings (north, northeast, east, southeast, south, southwest, west, northwest)
  */
-- (NSString *) eightPointHeadingInEnglish;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *eightPointHeadingInEnglish;
 
 
 /*!
  @return abbreviation of headingInEnglish (example N, SbSW)
  */
-- (NSString *) headingAbbreviation;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *headingAbbreviation;
 
 
 /*!
  @return traditional seafarers names
  */
-- (NSString *) headingTraditionalWindPoint;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *headingTraditionalWindPoint;
 
 @end

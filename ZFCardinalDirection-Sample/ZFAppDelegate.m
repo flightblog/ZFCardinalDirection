@@ -34,10 +34,10 @@
 //    NSLog(@"Simple heading: %@", [heading eightPointHeadingInEnglish]);
 
     ZFCardinalDirection *heading = [[ZFCardinalDirection alloc] init];
-    [heading setCompassHeadingInDegrees:[NSNumber numberWithDouble:209]];
+    [heading setCompassHeadingInDegrees:@209.0];
     NSLog(@"Block:'%@' Heading:'%@' Abb:'%@' Traditional Wind:'%@'", [heading headingPoint], [heading headingInEnglish], [heading headingAbbreviation],[heading headingTraditionalWindPoint]);
 
-    [heading setCompassHeadingInDegrees:[NSNumber numberWithDouble:209]];
+    [heading setCompassHeadingInDegrees:@209.0];
     NSLog(@"Eight pt:%@", [heading eightPointHeadingInEnglish]);
 
     //    double degrees = 0.01;

@@ -26,7 +26,7 @@
 @implementation ZFCardinalDirection
 
 - (instancetype) init {
-    return [self initWithCompassHeadingInDegrees:[NSNumber numberWithDouble:0.00]];
+    return [self initWithCompassHeadingInDegrees:@0.00];
 }
 
 - (instancetype) initWithCompassHeadingInDegrees:(NSNumber *)compassHeadingInDegrees {
@@ -48,8 +48,8 @@
 
 - (BOOL) validateDegrees {
 
-    NSNumber *zero = [NSNumber numberWithDouble: 0.00];
-    NSNumber *threeSixty = [NSNumber numberWithDouble: 360.00];
+    NSNumber *zero = @0.00;
+    NSNumber *threeSixty = @360.00;
 
     NSComparisonResult testForZero = [zero compare:_compassHeadingInDegrees];
     NSComparisonResult testForThreeSixty = [threeSixty compare:_compassHeadingInDegrees];
@@ -103,9 +103,9 @@
         NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
 
         if ([compassRoseResults count]) {
-            NSNumber *degreeLow = [[compassRoseResults objectAtIndex:0] valueForKey:@"degreeLow"];
-            NSNumber *degreeHigh = [[compassRoseResults objectAtIndex:0] valueForKey:@"degreeHigh"];
-            return [NSNumber numberWithDouble:(([degreeLow doubleValue]+[degreeHigh doubleValue])/2.0)];
+            NSNumber *degreeLow = [compassRoseResults[0] valueForKey:@"degreeLow"];
+            NSNumber *degreeHigh = [compassRoseResults[0] valueForKey:@"degreeHigh"];
+            return @(([degreeLow doubleValue]+[degreeHigh doubleValue])/2.0);
         }
         return nil;
     }
@@ -121,7 +121,7 @@
 - (NSNumber *) headingPoint {
 
     if ([self validateDegrees]) {
-        return [[[self findHeading] objectAtIndex:0] valueForKey:@"block"];
+        return [[self findHeading][0] valueForKey:@"block"];
     }
     return nil;
 }
@@ -129,7 +129,7 @@
 - (NSString *) headingInEnglish {
 
     if ([self validateDegrees]) {
-        return [[[self findHeading] objectAtIndex:0] valueForKey:@"point"];
+        return [[self findHeading][0] valueForKey:@"point"];
     }
     return nil;
 }
@@ -137,7 +137,7 @@
 - (NSString *)eightPointHeadingInEnglish {
 
     if ([self validateDegrees]) {
-        return [[[self findEightPointHeading] objectAtIndex:0] valueForKey:@"point"];
+        return [[self findEightPointHeading][0] valueForKey:@"point"];
     }
     return nil;
 }
@@ -145,7 +145,7 @@
 - (NSString *)headingAbbreviation {
 
     if ([self validateDegrees]) {
-        return [[[self findHeading] objectAtIndex:0] valueForKey:@"abbreviation"];
+        return [[self findHeading][0] valueForKey:@"abbreviation"];
     }
     return nil;
 }
@@ -154,7 +154,7 @@
 - (NSString *) headingTraditionalWindPoint {
 
     if ([self validateDegrees]) {
-        return [[[self findHeading] objectAtIndex:0] valueForKey:@"traditionalWind"];
+        return [[self findHeading][0] valueForKey:@"traditionalWind"];
     }
     return nil;
 }
