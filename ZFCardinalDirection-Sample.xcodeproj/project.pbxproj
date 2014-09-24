@@ -265,6 +265,7 @@
 		F0C734DF16A7B0CD005FC667 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZFCardinalDirection-Sample/ZFCardinalDirection-Sample-Prefix.pch";
 				INFOPLIST_FILE = "ZFCardinalDirection-Sample/ZFCardinalDirection-Sample-Info.plist";
@@ -276,6 +277,7 @@
 		F0C734E016A7B0CD005FC667 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZFCardinalDirection-Sample/ZFCardinalDirection-Sample-Prefix.pch";
 				INFOPLIST_FILE = "ZFCardinalDirection-Sample/ZFCardinalDirection-Sample-Info.plist";
