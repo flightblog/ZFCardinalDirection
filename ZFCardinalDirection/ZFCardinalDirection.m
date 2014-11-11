@@ -60,38 +60,31 @@
     return 0;
 }
 
-- (NSArray *)findHeading {
-
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"compassPoint222" ofType:@"plist"];
+- (NSArray *)findHeadingFromFileWithName:(NSString *)fileName {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
 
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-
         NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
         NSPredicate *p = [NSPredicate predicateWithFormat:@"(degreeLow <= %@) and (degreeHigh => %@) ", _compassHeadingInDegrees, _compassHeadingInDegrees];
         NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
 
         return compassRoseResults;
     }
+
     return nil;
+}
+
+- (NSArray *)findHeading {
+    return [self findHeadingFromFileWithName:@"compassPoint"];
+}
+
+- (NSArray *)findSixteenPointHeading {
+    return [self findHeadingFromFileWithName:@"sixteenPointCompass"];
 }
 
 - (NSArray *)findEightPointHeading {
-
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"eightPointCompass" ofType:@"plist"];
-
-    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-
-        NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
-
-        NSPredicate *p = [NSPredicate predicateWithFormat:@"(degreeLow <= %@) and (degreeHigh => %@) ", _compassHeadingInDegrees, _compassHeadingInDegrees];
-        NSArray *compassRoseResults = [matchedPoint filteredArrayUsingPredicate:p];
-
-        return compassRoseResults;
-    }
-
-    return nil;
+    return [self findHeadingFromFileWithName:@"eightPointCompass"];
 }
-
 
 - (NSNumber *)degreesFromHeadingAbbreviation:(NSString *)headingAbbreviation {
 
@@ -139,6 +132,15 @@
     if ([self validateDegrees]) {
         return [[self findEightPointHeading][0] valueForKey:@"point"];
     }
+    return nil;
+}
+
+- (NSString *)sixteenPointHeadingAbbreviation {
+
+    if ([self validateDegrees]) {
+        return [[self findSixteenPointHeading][0] valueForKey:@"abbreviation"];
+    }
+
     return nil;
 }
 

@@ -63,6 +63,12 @@
 
 
 /*!
+   @return 16 point abbreviation of headingInEnglish (example N, SSW)
+ */
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *sixteenPointHeadingAbbreviation;
+
+
+/*!
  @return abbreviation of headingInEnglish (example N, SbSW)
  */
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *headingAbbreviation;
