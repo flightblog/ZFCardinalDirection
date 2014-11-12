@@ -52,9 +52,9 @@
 	</dict>
 	<dict>
 		<key>point</key>
-		<string>Northeast</string>
-		<key>abbreviation</key>
 		<string>South</string>
+		<key>abbreviation</key>
+		<string>S</string>
 		<key>traditionalWind</key>
 		<string>Ostro</string>
 		<key>degreeLow</key>
