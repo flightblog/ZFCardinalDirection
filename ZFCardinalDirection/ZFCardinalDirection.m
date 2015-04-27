@@ -61,7 +61,7 @@
 }
 
 - (NSArray *)findHeadingFromFileWithName:(NSString *)fileName {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+    NSString *filePath = [[NSBundle bundleForClass:[ZFCardinalDirection class]] pathForResource:fileName ofType:@"plist"];
 
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
@@ -88,7 +88,7 @@
 
 - (NSNumber *)degreesFromHeadingAbbreviation:(NSString *)headingAbbreviation {
 
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"compassPoint" ofType:@"plist"];;
+    NSString *filePath = [[NSBundle bundleForClass:[ZFCardinalDirection class]] pathForResource:@"compassPoint" ofType:@"plist"];;
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
 
         NSArray *matchedPoint = [[NSArray alloc] initWithContentsOfFile:filePath];
